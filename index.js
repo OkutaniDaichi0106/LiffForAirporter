@@ -23,7 +23,6 @@ class LIFF{
 				},
 				]);
 			});
-			
 			liff.closeWindow();
 		}).catch((err) => {
 			console.log(err);
