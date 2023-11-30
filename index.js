@@ -12,26 +12,24 @@ class LIFF{
 			const confirmButton = document.getElementById("confirm");
 			const nameForm = document.getElementById("name");
 			confirmButton.addEventListener("click", ()=>{
+				liff.sendMessages([{
+					type: text, 
+					tsxt: "click!"
+				}]);
 				name = nameForm.value;
-				idToken = new LIFF().getIdToken();
+				idToken = liff.getIDToken();
 				const message = `名前：${name}、ID：${idToken}`
 				console.log(message);
-				liff.sendMessages([
-				{
+				liff.sendMessages([{
 					type: "text", 
-					text: message,
-				},
-				]);
+					text: message
+				}]);
 				liff.closeWindow();
 			});
 			
 		}).catch((err) => {
 			console.log(err);
 		})
-	}
-	getIdToken(){
-		const idToken = liff.getIDToken();
-		return idToken;
 	}
 }
 
