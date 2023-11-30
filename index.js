@@ -9,14 +9,19 @@ class LIFF{
 		liff.init({
 			liffId: "2001929504-zbp7ajrv", 
 			withLoginOnExternalBrowser: true,
-		}).then(() => {
-			liff.sendMessages([{
-				type: "text",
-				text: "aaaa"
-			}]).then(()=>{
+		})
+		.then(() => {
+			liff.sendMessages([
+				{
+					type: "text",
+					text: "aaaa",
+				},
+			])
+			.then(()=>{
 				liff.closeWindow();
 			});
-		}).catch((err) => {
+		})
+		.catch((err) => {
 			console.log(err);
 		});
 	}
