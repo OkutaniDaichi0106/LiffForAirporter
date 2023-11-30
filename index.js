@@ -11,11 +11,7 @@ class LIFF{
 			let idToken;
 			const confirmButton = document.getElementById("confirm");
 			const nameForm = document.getElementById("name");
-			confirmButton.addEventListener("click", ()=>{
-				liff.sendMessages([{
-					type: text, 
-					tsxt: "click!"
-				}]);
+			confirmButton.addEventListener("click", function(){
 				name = nameForm.value;
 				idToken = liff.getIDToken();
 				const message = `名前：${name}、ID：${idToken}`
@@ -23,8 +19,9 @@ class LIFF{
 				liff.sendMessages([{
 					type: "text", 
 					text: message
-				}]);
-				liff.closeWindow();
+				}]).then(()=>{
+					liff.closeWindow();
+				});
 			});
 			
 		}).catch((err) => {
