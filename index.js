@@ -11,15 +11,21 @@ class LIFF{
 			withLoginOnExternalBrowser: true,
 		})
 		.then(() => {
-			liff.sendMessages([
-				{
-					type: "text",
-					text: "aaaa",
-				},
-			])
-			.then(()=>{
-				liff.closeWindow();
-			});
+			confirmButton.addEventListener("click", ()=>{
+				name = nameForm.value;
+				idToken = liff.getIDToken();
+				message = name + ":" + idToken;
+				liff.sendMessages([
+					{
+						type: "text",
+						text: message,
+					},
+				])
+				.then(()=>{
+					liff.closeWindow();
+				});
+			})
+			
 		})
 		.catch((err) => {
 			console.log(err);
