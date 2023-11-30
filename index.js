@@ -22,8 +22,9 @@ class LIFF{
 					text: message,
 				},
 				]);
+				liff.closeWindow();
 			});
-			liff.closeWindow();
+			
 		}).catch((err) => {
 			console.log(err);
 		})
