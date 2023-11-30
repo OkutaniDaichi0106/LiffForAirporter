@@ -6,7 +6,7 @@ class LIFF{
 		console.log("LIFF()...");
 
 		liff.init({
-			liffId: "liffId", 
+			liffId: "2001929504-zbp7ajrv", 
 			withLoginOnExternalBrowser: true,
 		}).then(() => {
 			//start program
