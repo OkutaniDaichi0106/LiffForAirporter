@@ -1,6 +1,6 @@
 const confirmButton = document.getElementById("confirm");
 const nameForm = document.getElementById("name")
-
+new LIFF();
 class LIFF{
 	constructor(){
 		console.log("LIFF()...");
