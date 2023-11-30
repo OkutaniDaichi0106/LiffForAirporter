@@ -15,15 +15,16 @@ class LIFF{
 			confirmButton.addEventListener("click", ()=>{
 				name = nameForm.value;
 				idToken = new LIFF().getIdToken();
-			})
-			const message = `名前：${name}、ID：${idToken}`
-			console.log(message);
-			liff.sendMessages([
+				const message = `名前：${name}、ID：${idToken}`
+				console.log(message);
+				liff.sendMessages([
 				{
 					type: "text", 
 					text: message,
 				},
-			]);
+				]);
+			});
+			
 			liff.closeWindow();
 		}).catch((err) => {
 			console.log(err);
