@@ -17,13 +17,14 @@ class LIFF{
 				idToken = new LIFF().getIdToken();
 			})
 			const message = `名前：${name}、ID：${idToken}`
+			console.log(message);
 			liff.sendMessages([
 				{
 					type: "text", 
 					text: message,
 				},
 			]);
-			closeWindow();
+			liff.closeWindow();
 		}).catch((err) => {
 			console.log(err);
 		})
